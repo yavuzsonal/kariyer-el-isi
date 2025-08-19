@@ -23,6 +23,22 @@
       .animate-breathe { animation: breathe 5s infinite ease-in-out; }
       .animation-delay-2000 { animation-delay: 2s; }
       .animation-delay-4000 { animation-delay: 4s; }
+      .grounded-character::after {
+        content: '';
+        position: absolute;
+        bottom: 0.5rem; /* Closer to the feet */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 20px; /* Slightly thicker */
+        background-color: rgba(0, 0, 0, 0.35); /* Darker shadow */
+        border-radius: 50%;
+        filter: blur(15px); /* Less blurry */
+      }
+      .grounded-character > img {
+        position: relative;
+        z-index: 1;
+      }
     </style>
     <!-- React and Babel for in-browser JSX transformation -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -50,7 +66,7 @@
 
       const Character = ({ className }) => {
         return (
-          <div className={`relative ${className}`}>
+          <div className={`relative grounded-character ${className}`}>
             <img 
               src={CHARACTER_IMAGE_URL} 
               alt="Career Ambassador Character" 
