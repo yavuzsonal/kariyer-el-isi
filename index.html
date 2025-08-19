@@ -7,9 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: 'Poppins', sans-serif;
-        overflow: hidden; /* Prevent body scroll */
+        overflow-x: hidden; /* Prevent horizontal scroll */
       }
       @keyframes breathe {
         0% { transform: translate(0px, 0px) scale(1); }
@@ -81,40 +84,44 @@
           </svg>
       );
 
-      const SlideContainer = ({ children }) => (
-          <div className="w-full h-full flex items-center justify-center p-4 sm:p-8 lg:p-16 relative pt-24 sm:pt-24 lg:pt-16">
-              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
-                  <Logo />
-              </div>
+      const SectionContainer = ({ children, isFirst = false }) => (
+          <section className={`w-full min-h-screen flex items-center justify-center p-4 sm:p-8 lg:p-16 relative ${isFirst ? '' : 'pt-24 sm:pt-24 lg:pt-16'}`}>
               {children}
-          </div>
+          </section>
+      );
+      
+      const Header = () => (
+        <header className="fixed top-0 left-0 right-0 z-20 flex justify-center p-8">
+            <Logo />
+        </header>
       );
 
+
       const Slide1 = () => (
-          <SlideContainer>
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 w-full max-w-6xl">
+          <SectionContainer isFirst={true}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 w-full max-w-6xl mt-16 lg:mt-0">
                   <div className="flex flex-col text-center lg:text-left items-center lg:items-start order-2 lg:order-1">
                       <h1 className="text-[2.5rem] leading-tight sm:text-6xl md:text-8xl font-extrabold tracking-tighter">KARİYER ELÇİLERİ</h1>
                       <div className="my-4 md:my-6">
                           <span className="inline-block bg-[#3c41c7] text-white text-2xl sm:text-5xl md:text-7xl font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transform -rotate-3">aranıyor!</span>
                       </div>
                       <p className="text-base sm:text-lg md:text-xl font-semibold bg-black/20 px-4 py-2 rounded-lg">Son Başvuru: 10.10.2025</p>
-                      <div className="mt-6 md:mt-12 flex items-center gap-4 text-base md:text-lg">
-                          <div className="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center">
-                              <ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6" />
+                      <div className="mt-6 md:mt-12 flex items-center gap-4 text-base md:text-lg opacity-50">
+                          <div className="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full flex items-center justify-center animate-bounce">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                           </div>
-                          <span>Detaylar İçin Kaydır</span>
+                          <span>Keşfetmek İçin Kaydır</span>
                       </div>
                   </div>
                   <div className="w-full h-full flex items-center justify-center order-1 lg:order-2">
                       <Character className="w-52 h-auto sm:w-80 md:w-[400px]" />
                   </div>
               </div>
-          </SlideContainer>
+          </SectionContainer>
       );
 
       const Slide2 = () => (
-          <SlideContainer>
+          <SectionContainer>
               <div className="w-full max-w-4xl text-center flex flex-col items-center">
                   <h2 className="text-[2.25rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 md:mb-12">SENİ NELER BEKLİYOR?</h2>
                   <ul className="space-y-3 text-sm sm:text-lg md:text-xl lg:text-2xl text-left max-w-2xl w-full">
@@ -125,11 +132,11 @@
                       ))}
                   </ul>
               </div>
-          </SlideContainer>
+          </SectionContainer>
       );
 
       const Slide3 = () => (
-          <SlideContainer>
+          <SectionContainer>
               <div className="w-full max-w-4xl text-center flex flex-col items-center">
                   <h2 className="text-[2.25rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 md:mb-12">BİZ SENDEN NELER BEKLİYORUZ?</h2>
                   <ul className="space-y-3 text-sm sm:text-lg md:text-xl lg:text-2xl text-left max-w-2xl w-full">
@@ -140,11 +147,11 @@
                       ))}
                   </ul>
               </div>
-          </SlideContainer>
+          </SectionContainer>
       );
 
       const Slide4 = () => (
-          <SlideContainer>
+          <SectionContainer>
               <div className="w-full max-w-4xl flex flex-col items-center">
                   <h2 className="text-[2.25rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4 md:mb-12 text-center">NASIL BAŞVURULUR?</h2>
                   <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6 text-center">
@@ -167,11 +174,11 @@
                       </div>
                   </div>
               </div>
-          </SlideContainer>
+          </SectionContainer>
       );
 
       const Slide5 = () => (
-          <SlideContainer>
+          <SectionContainer>
               <div className="w-full max-w-4xl flex flex-col items-center text-center">
                   <div className="flex gap-6 md:gap-8 text-white mb-6 md:mb-8">
                       <LikeIcon className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
@@ -184,123 +191,31 @@
                       <span className="inline-block bg-[#3c41c7] text-yellow-300 text-3xl sm:text-4xl md:text-8xl font-bold py-2 px-6 sm:py-3 sm:px-8 md:py-4 md:px-12 rounded-full transform rotate-[-3deg]">LİDER OL!</span>
                   </div>
               </div>
-          </SlideContainer>
+          </SectionContainer>
       );
 
       // From App.tsx
-      const slideComponents = [
+      const sections = [
         <Slide1 key="slide1" />,
         <Slide2 key="slide2" />,
         <Slide3 key="slide3" />,
         <Slide4 key="slide4" />,
         <Slide5 key="slide5" />,
       ];
-      const TOTAL_SLIDES = slideComponents.length;
 
       const App = () => {
-        const { useState, useEffect, useCallback, useRef } = React;
-        const [currentSlide, setCurrentSlide] = useState(0);
-        const isInteractingRef = useRef(false);
-        const timeoutRef = useRef(null);
-        const touchStartY = useRef(null);
-
-        const nextSlide = useCallback(() => {
-          setCurrentSlide((prev) => (prev === TOTAL_SLIDES - 1 ? 0 : prev + 1));
-        }, []);
-
-        const prevSlide = useCallback(() => {
-          setCurrentSlide((prev) => (prev === 0 ? TOTAL_SLIDES - 1 : prev - 1));
-        }, []);
-
-        useEffect(() => {
-          const startInteraction = () => {
-            isInteractingRef.current = true;
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-            timeoutRef.current = setTimeout(() => {
-              isInteractingRef.current = false;
-            }, 800); // Cooldown to prevent rapid slide changes
-          };
-          
-          const handleWheel = (event) => {
-            if (isInteractingRef.current) return;
-
-            if (event.deltaY > 5) { // Small threshold
-              nextSlide();
-              startInteraction();
-            } else if (event.deltaY < -5) {
-              prevSlide();
-              startInteraction();
-            }
-          };
-          
-          const handleKeyDown = (event) => {
-            if (isInteractingRef.current) return;
-            if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-              nextSlide();
-              startInteraction();
-            } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-              prevSlide();
-              startInteraction();
-            }
-          };
-
-          const handleTouchStart = (event) => {
-              touchStartY.current = event.touches[0].clientY;
-          };
-
-          const handleTouchEnd = (event) => {
-            if (isInteractingRef.current || touchStartY.current === null) return;
-            
-            const touchEndY = event.changedTouches[0].clientY;
-            const swipeDistance = touchStartY.current - touchEndY;
-            const minSwipeDistance = 50;
-            
-            if (swipeDistance > minSwipeDistance) {
-                nextSlide();
-                startInteraction();
-            } else if (swipeDistance < -minSwipeDistance) {
-                prevSlide();
-                startInteraction();
-            }
-            touchStartY.current = null;
-          };
-
-
-          window.addEventListener('wheel', handleWheel);
-          window.addEventListener('keydown', handleKeyDown);
-          window.addEventListener('touchstart', handleTouchStart);
-          window.addEventListener('touchend', handleTouchEnd);
-          
-          return () => {
-            window.removeEventListener('wheel', handleWheel);
-            window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchend', handleTouchEnd);
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-            }
-          };
-        }, [nextSlide, prevSlide]);
-
         return (
-          <main className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-orange-500 to-amber-500 text-white font-sans">
+          <main className="relative w-full min-h-screen bg-gradient-to-br from-orange-500 to-amber-500 text-white font-sans">
             {/* Background Blobs */}
-            <div className="absolute top-0 -left-4 w-72 h-72 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-breathe"></div>
-            <div className="absolute top-0 -right-4 w-72 h-72 bg-orange-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-breathe animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-rose-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-breathe animation-delay-4000"></div>
+            <div className="fixed top-0 -left-4 w-72 h-72 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-breathe"></div>
+            <div className="fixed top-0 -right-4 w-72 h-72 bg-orange-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-breathe animation-delay-2000"></div>
+            <div className="fixed -bottom-8 left-20 w-72 h-72 bg-rose-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-breathe animation-delay-4000"></div>
 
-            {/* Slide Counter */}
-            <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-base sm:text-lg font-semibold z-20 bg-black/20 px-3 py-1 rounded-lg">
-              {String(currentSlide + 1).padStart(2, '0')} / {String(TOTAL_SLIDES).padStart(2, '0')}
-            </div>
+            <Header />
 
-            {/* Slide Container */}
-            <div className="w-full h-full transition-transform duration-700 ease-in-out" style={{ transform: `translateY(-${currentSlide * 100}%)` }}>
-              {slideComponents.map((slide, index) => (
-                <div key={index} className="w-full h-full flex-shrink-0">
-                  {slide}
-                </div>
-              ))}
+            {/* Sections Container */}
+            <div>
+              {sections}
             </div>
           </main>
         );
