@@ -82,8 +82,8 @@
       );
 
       const SlideContainer = ({ children }) => (
-          <div className="w-full h-full flex items-center justify-center p-6 sm:p-8 lg:p-16 relative pt-20 sm:pt-24 lg:pt-16">
-              <div className="absolute top-6 sm:top-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-full h-full flex items-center justify-center p-6 sm:p-8 lg:p-16 relative pt-28 sm:pt-24 lg:pt-16">
+              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
                   <Logo />
               </div>
               {children}
@@ -94,9 +94,9 @@
           <SlideContainer>
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 w-full max-w-6xl">
                   <div className="flex flex-col text-center lg:text-left items-center lg:items-start order-2 lg:order-1">
-                      <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter">KARİYER ELÇİLERİ</h1>
+                      <h1 className="text-[2.75rem] leading-tight sm:text-6xl md:text-8xl font-extrabold tracking-tighter">KARİYER ELÇİLERİ</h1>
                       <div className="my-4 md:my-6">
-                          <span className="inline-block bg-[#3c41c7] text-white text-4xl sm:text-5xl md:text-7xl font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transform -rotate-3">aranıyor!</span>
+                          <span className="inline-block bg-[#3c41c7] text-white text-3xl sm:text-5xl md:text-7xl font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transform -rotate-3">aranıyor!</span>
                       </div>
                       <p className="text-lg md:text-xl font-semibold bg-black/20 px-4 py-2 rounded-lg">Son Başvuru: 10.10.2025</p>
                       <div className="mt-8 md:mt-12 flex items-center gap-4 text-base md:text-lg">
@@ -116,7 +116,7 @@
       const Slide2 = () => (
           <SlideContainer>
               <div className="w-full max-w-4xl text-center flex flex-col items-center">
-                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12">SENİ NELER BEKLİYOR?</h2>
+                  <h2 className="text-[2.5rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12">SENİ NELER BEKLİYOR?</h2>
                   <ul className="space-y-4 text-base sm:text-lg md:text-xl lg:text-2xl text-left max-w-2xl w-full">
                       {["e-Devlet Onaylı 21.YY Yetkinlikleri Eğitim Programı", "Sektör Yöneticilerinden Mentörlük", "Network İmkanı", "Referans Mektubu", "Deneyim Odaklı Harika Bir Serüven"].map((item, index) => (
                           <li key={index} className="p-3 md:p-4 bg-white/10 rounded-xl backdrop-blur-sm transition hover:bg-white/20">
@@ -131,7 +131,7 @@
       const Slide3 = () => (
           <SlideContainer>
               <div className="w-full max-w-4xl text-center flex flex-col items-center">
-                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12">BİZ SENDEN NELER BEKLİYORUZ?</h2>
+                  <h2 className="text-[2.5rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12">BİZ SENDEN NELER BEKLİYORUZ?</h2>
                   <ul className="space-y-4 text-base sm:text-lg md:text-xl lg:text-2xl text-left max-w-2xl w-full">
                       {["Öğrenme Tutkusu Ve Gelişime Açıklık", "Aktif Katılım Ve Sorumluluk Bilinci", "İletişime Açık Ve İşbirlikçi Yaklaşım", "Kendini Geliştirme Konusunda Kararlılık"].map((item, index) => (
                           <li key={index} className="p-3 md:p-4 bg-white/10 rounded-xl backdrop-blur-sm transition hover:bg-white/20">
@@ -146,21 +146,21 @@
       const Slide4 = () => (
           <SlideContainer>
               <div className="w-full max-w-4xl flex flex-col items-center">
-                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12 text-center">NASIL BAŞVURULUR?</h2>
+                  <h2 className="text-[2.5rem] leading-tight sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 md:mb-12 text-center">NASIL BAŞVURULUR?</h2>
                   <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
                       <a href="https://arelkam.arel.edu.tr/ogrenci/login" target="_blank" rel="noopener noreferrer" className="block">
-                          <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] hover:bg-white/20 transition h-full">
+                          <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px] hover:bg-white/20 transition h-full">
                               <span className="text-5xl md:text-6xl font-bold text-white/50 mb-2">1</span>
                               <h3 className="text-xl md:text-2xl font-bold">Başvuru Yap</h3>
                               <p className="text-sm sm:text-base text-white/80">Arelkam web sayfasındaki ilana</p>
                           </div>
                       </a>
-                      <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] hover:bg-white/20 transition">
+                      <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px] hover:bg-white/20 transition">
                           <span className="text-5xl md:text-6xl font-bold text-white/50 mb-2">2</span>
                           <h3 className="text-xl md:text-2xl font-bold">Mülakata Katıl</h3>
                           <p className="text-sm sm:text-base text-white/80">Ön Elemeyi Geç</p>
                       </div>
-                       <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[180px] md:min-h-[200px] hover:bg-white/20 transition">
+                       <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px] hover:bg-white/20 transition">
                           <span className="text-5xl md:text-6xl font-bold text-white/50 mb-2">3</span>
                           <h3 className="text-xl md:text-2xl font-bold">Kariyer Elçisi Ol!</h3>
                           <p className="text-sm sm:text-base text-white/80">Fark Yaratmaya Başla</p>
@@ -174,12 +174,12 @@
           <SlideContainer>
               <div className="w-full max-w-4xl flex flex-col items-center text-center">
                   <div className="flex gap-6 md:gap-8 text-white mb-6 md:mb-8">
-                      <LikeIcon className="w-12 h-12 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
-                      <CommentIcon className="w-12 h-12 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
-                      <ShareIcon className="w-12 h-12 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
+                      <LikeIcon className="w-10 h-10 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
+                      <CommentIcon className="w-10 h-10 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
+                      <ShareIcon className="w-10 h-10 md:w-16 md:h-16 opacity-80 hover:opacity-100 transform hover:scale-110 transition-transform" />
                   </div>
-                  <h2 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight">BUGÜN BAŞVUR,</h2>
-                  <h2 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight mt-1 md:mt-2">YARIN</h2>
+                  <h2 className="text-[2.5rem] leading-tight sm:text-6xl md:text-8xl font-extrabold tracking-tight">BUGÜN BAŞVUR,</h2>
+                  <h2 className="text-[2.5rem] leading-tight sm:text-6xl md:text-8xl font-extrabold tracking-tight mt-1 md:mt-2">YARIN</h2>
                   <div className="mt-4 md:mt-6">
                       <span className="inline-block bg-[#3c41c7] text-yellow-300 text-4xl sm:text-6xl md:text-8xl font-bold py-3 px-8 md:py-4 md:px-12 rounded-full transform rotate-[-3deg]">LİDER OL!</span>
                   </div>
